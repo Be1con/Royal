@@ -5,8 +5,10 @@ import Menubar from '../Components/Menubar/Menubar'
 class Pages extends Component {
     render() {
         return(
-            <div>
+            <div className="Pages">
                 <Menubar />
+
+                
             </div>
         );
     }
