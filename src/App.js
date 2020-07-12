@@ -36,6 +36,11 @@ class App extends Component {
             
     
             })
+
+
+
+
+
             console.log((this.state.obj))
             console.log(this.state.s)
             // const a = Object.entries(this.state.obj)
@@ -46,6 +51,15 @@ class App extends Component {
             console.log((this.state.obj[2].Rank))
             console.log(this.state.s)
             console.log(this.state.FirstName)
+
+            let result = Object.entries(this.state.obj);
+            result.map((item, index)=>{
+                  console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
+            });
+                console.log("result" + result)
+              
+        
+          
             });
            
         console.log(this.state.obj)
@@ -61,10 +75,19 @@ class App extends Component {
                     <Pages />
                     {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)}
                       {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)
-}
+}           
                      {Object.entries(this.state.obj).map(([key, value]) => console.log(`${value.LastName}`))}  
-{Object.entries(this.state.obj).map(([key, value]) => <h1 key={value}>{value.FirstName}</h1>)}
+{Object.entries(this.state.obj).map(([key, value]) => <h1 key={value}>{value.FirstName[1]}</h1>)}
                      <h1>fenuifneufnui</h1>
+
+                        {
+                                    Object.entries(this.state.obj).map((item)=>{
+                                        console.log('key is:- ', item[0], ' and value is:- ', item[1].Building); 
+                                  })
+                                    
+
+
+                        }
                 </div>
             </BrowserRouter>
         );
