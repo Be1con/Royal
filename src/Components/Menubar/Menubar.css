@@ -1,3 +1,15 @@
 .menubar__main {
     background-color: #8729BD;
 }
+
+.menubar__item {
+    font-weight: 500;
+}
+
+.menubar__flexgrow {
+    flex-grow: 1;
+}
+
+.menubar__margin {
+    margin-right: auto;
+}

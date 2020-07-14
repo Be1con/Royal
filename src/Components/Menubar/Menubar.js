@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
-import { Navbar, NavItem, Icon } from 'react-materialize';
+import React from 'react';
+import { AppBar, Toolbar, IconButton, Button } from '@material-ui/core';
+import { Menu } from '@material-ui/icons'
 import Logo from '../../Assets/Royal.png';
 import './Menubar.css';
 
-class Menubar extends Component {
-    render(){
-        return(
-            <Navbar className="menubar__main" alignLinks="right" brand={<img src={Logo} alt="Logo" style={{height: "100%"}} />} centerLogo menuIcon={<Icon>menu</Icon>} options={{draggable: true, edge: "left", inDuration: 250, outDuration: 200, preventScrolling: true}}>
-                <NavItem>หน้าแรก</NavItem>
-                <NavItem>ติดต่อเรา</NavItem>
-            </Navbar>
-        )
-    }
+const menubar = props => {
+    return(
+        <AppBar className="menubar__flexgrow">
+            <Toolbar>
+                <IconButton className="menubar__margin" edge="start" color="inherit" aria-label="menu">
+                    <Menu />
+                </IconButton>
+                <img src={Logo} height="64px" alt="Logo" />
+                <div className="menubar__flexgrow" />
+                <Button color="inherit">หน้าแรก</Button>
+            </Toolbar>
+        </AppBar>
+    );
 }
 
-export default Menubar
+export default menubar;
