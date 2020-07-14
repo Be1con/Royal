@@ -12,11 +12,97 @@ class App extends Component {
        FirstName : 'fefe',
        obj : {},
        s : 'c',
-       
+       North :
+        ['เชียงราย','เชียงใหม่' 
+        ,'น่าน'
+        ,'พะเยา' 
+        ,'แพร่' 
+        ,'แม่ฮ่องสอน' 
+        ,'ลำปาง' 
+        ,'ลำพูน' 
+        ,'อุตรดิตถ์'],
+        NorthEast : 
+        [   'กาฬสินธุ์' 
+            ,'ขอนแก่น' 
+            ,'ชัยภูมิ' 
+            ,'นครพนม' 
+            ,'นครราชสีมา' 
+            ,'บึงกาฬ' 
+            ,'บุรีรัมย์' 
+            ,'มหาสารคาม' 
+            ,'มุกดาหาร' 
+            ,'ยโสธร' 
+            ,'ร้อยเอ็ด' 
+            ,'เลย' 
+            ,'สกลนคร' 
+            ,'สุรินทร์' 
+            ,'ศรีสะเกษ' 
+            ,'หนองคาย' 
+            ,'หนองบัวลำภู' 
+            ,'อุดรธานี' 
+            ,'อุบลราชธานี' 
+            ,'อำนาจเจริญ' 
+
+        ],
+        Middle :
+        [    'กรุงเทพมหานคร'
+            ,'กำแพงเพชร' 
+            ,'ชัยนาท' 
+            ,'นครนายก' 
+            ,'นครปฐม' 
+            ,'นครสวรรค์' 
+            ,'นนทบุรี' 
+            ,'ปทุมธานี' 
+            ,'พระนครศรีอยุธยา' 
+            ,'พิจิตร' 
+            ,'พิษณุโลก' 
+            ,'เพชรบูรณ์' 
+            ,'ลพบุรี' 
+            ,'สมุทรปราการ' 
+            ,'สมุทรสงคราม' 
+            ,'สมุทรสาคร' 
+            ,'สิงห์บุรี' 
+            ,'สุโขทัย' 
+            ,'สุพรรณบุรี' 
+            ,'สระบุรี' 
+            ,'อ่างทอง' 
+            ,'อุทัยธานี'
+            ,'จันทบุรี' 
+            ,'ฉะเชิงเทรา' 
+            ,'ชลบุรี' 
+            ,'ตราด' 
+            ,'ปราจีนบุรี' 
+            ,'ระยอง' 
+            ,'สระแก้ว'
+            ,'กาญจนบุรี' 
+            ,'ตาก' 
+            ,'ประจวบคีรีขันธ์' 
+            ,'เพชรบุรี' 
+            ,'ราชบุรี' 
+
+        ],
+        South :
+        [
+            'กระบี่' 
+            ,'ชุมพร' 
+            ,'ตรัง' 
+            ,'นครศรีธรรมราช' 
+            ,'นราธิวาส' 
+            ,'ปัตตานี' 
+            ,'พังงา' 
+            ,'พัทลุง' 
+            ,'ภูเก็ต' 
+            ,'ระนอง' 
+            ,'สตูล' 
+            ,'สงขลา' 
+            ,'สุราษฎร์ธานี' 
+            ,'ยะลา' 
+             
+        ]
 
     }
     }
-        
+
     componentDidMount() {
 
             const rootRef = firebase.database().ref('Mastersheet')
@@ -32,15 +118,15 @@ class App extends Component {
 
                 obj : snap.val(),
                 s : 'z',
-                FirstName : 'zzzzzz'
-            
+                FirstName : 'zzzzzz',
+                North : North
     
             })
 
 
 
 
-
+            console.log(this.state.North)    
             console.log((this.state.obj))
             console.log(this.state.s)
             // const a = Object.entries(this.state.obj)
@@ -56,9 +142,23 @@ class App extends Component {
             result.map((item, index)=>{
                   console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
             });
-                console.log("result" + result)
-              
-        
+               
+            
+
+
+                  let N =  Object.entries(this.state.obj).filter(function(province) {
+
+
+                    province.map((item)=>{
+                        
+                       console.log(this.state.North)
+                        
+                  })
+               
+                    
+                });
+                
+
           
             });
            
@@ -73,17 +173,33 @@ class App extends Component {
             <BrowserRouter>
                 <div>
                     <Pages />
+                    
                     {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)}
                       {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)
 }           
                      {Object.entries(this.state.obj).map(([key, value]) => console.log(`${value.LastName}`))}  
 {Object.entries(this.state.obj).map(([key, value]) => <h1 key={value}>{value.FirstName[1]}</h1>)}
-                     <h1>fenuifneufnui</h1>
+                     <h1>fenuifneufnufeffei</h1>
 
                         {
                                     Object.entries(this.state.obj).map((item)=>{
-                                        console.log('key is:- ', item[0], ' and value is:- ', item[1].Building); 
+                                        console.log('key is:- ', item[0], ' and value is:- ', item[1].Image); 
+                                        
                                   })
+                                    
+
+
+                        }
+
+
+
+{
+                                    Object.entries(this.state.obj).map((item)=>
+
+
+                                      <img src ='{item[1].Image} 'alt="Girl in a jacket"/>
+                                        
+                                  )
                                     
 
 
