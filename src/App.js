@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Pages from './Pages/Pages';
 import * as firebase from 'firebase/app';
-import province from './province.json';
-import Test from './Test'
+import province from './Province.json';
 class App extends Component {
     
     constructor(){
