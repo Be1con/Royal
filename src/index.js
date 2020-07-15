@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase'; 
 
-
 var  config  = {
   apiKey : "AIzaSyBo8X8wy49depPwn_K8RcXYPPDERFddUqg",
   authDomain: "test-27239.firebaseapp.com",
