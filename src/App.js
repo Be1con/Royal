@@ -23,24 +23,18 @@ class App extends Component {
             const rootRef = firebase.database().ref('Mastersheet')
             // console.log(rootRef)
          
-            const nameRef = rootRef.child('FirstName')
+            // const nameRef = rootRef.child('FirstName')
             // console.log(nameRef)
           
             rootRef.on('value', (snap) => {
                 console.log(snap.val())
                 // alert(snap.val())
-              
                 this.setState({
-
-                obj : snap.val(),
-                s : 'z',
-                FirstName : 'zzzzzz'
-              
-    
+                obj : snap.val() 
             })
 
-            console.log('bbccc')
-            console.log(province.Northern)
+            // console.log('bbccc')
+            // console.log(province.Northern)
             // let N =  Object.entries(this.state.obj).filter(function(province) {
                 
 
@@ -59,10 +53,6 @@ class App extends Component {
            
                 
             // });
-
-
-
-
             // console.log(this.state.North)    
             // console.log(province.Northern)
             // console.log((this.state.obj))
@@ -76,10 +66,10 @@ class App extends Component {
             // console.log(this.state.s)
             // console.log(this.state.FirstName)
 
-            let result = Object.entries(this.state.obj);
-            result.map((item, index)=>{
-                  console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
-            });
+            // let result = Object.entries(this.state.obj);
+            // result.map((item, index)=>{
+            //       console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
+            // });
                
             
 
@@ -103,9 +93,9 @@ class App extends Component {
           
             });
            
-        console.log(this.state.obj)
-        console.log(this.state.s)
-        console.log(this.state.FirstName)
+        // console.log(this.state.obj)
+        // console.log(this.state.s)
+        // console.log(this.state.FirstName)
     }
   
 
@@ -114,7 +104,7 @@ class App extends Component {
             <BrowserRouter>
                 <div>
                     <Pages />
-                    <Test obj={this.state.obj}/>
+                    {/* <Test obj={this.state.obj}/>
                     {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)}
                       {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)
 }           
@@ -144,7 +134,7 @@ class App extends Component {
                                     
 
 
-                        }
+                        } */}
                 </div>
             </BrowserRouter>
         );
