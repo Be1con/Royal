@@ -3,6 +3,7 @@ import Title from '../../Components/Title/Title';
 import ProvinceButton from '../../Components/ProvinceButton/ProvinceButton';
 import './ProvinceSelection.css';
 import { Grid } from '@material-ui/core';
+import Krabi from '../../Assets/Provinces/Southern/Krabi.svg'
 
 const provinceSelection = props => {
     return(
