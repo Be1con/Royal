@@ -9,7 +9,7 @@ const provinceSelection = props => {
         <div>
             <Title TitleHeading="เลือกจังหวัดที่ท่านต้องการ" TitleSubheading="โรงเรียนจิตอาสาฯ ช่วยเหลือไฟป่า" />
             <Grid container spacing={1}>
-                
+                <ProvinceButton ProvinceVector={Krabi} ProvinceName="กระบี่" ProvinceColor="#fff000" />
             </Grid>
         </div>
     )
