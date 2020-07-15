@@ -1,0 +1,55 @@
+@media screen and (max-width: 450px) {
+    .mainbutton__button {
+        width: 130px;
+        height: 130px;
+        padding: 5px;
+        border-radius: 10%;
+        text-align: center;
+        color: white;
+        box-shadow: 5px 5px 5px gray;
+    }
+
+    .mainbutton__vector {
+        filter: invert(99%) sepia(3%) saturate(7153%) hue-rotate(200deg) brightness(116%) contrast(100%);
+        width: 80px;
+        height: 80px;
+    }
+
+    .mainbutton__image {
+        display: block;
+        margin: auto;
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 451px) {
+    .mainbutton__button {
+        width: 290px;
+        height: 290px;
+        padding: 10px;
+        border-radius: 10%;
+        text-align: center;
+        color: white;
+        box-shadow: 2px 2px 5px gray;
+    }
+
+    .mainbutton__vector {
+        filter: invert(99%) sepia(3%) saturate(7153%) hue-rotate(200deg) brightness(116%) contrast(100%);
+        width: 200px;
+        height: 200px;
+    }
+
+    .mainbutton__image {
+        display: block;
+        margin: auto;
+        padding: 1rem;
+    }
+}
+
+.mainbutton__container {
+    padding-bottom: 10px;
+}
+
+.mainbutton__title {
+    color: white;
+}

@@ -1,0 +1,9 @@
+.people__card {
+    width: 240px;
+    font-weight: 500;
+}
+
+.people__media {
+    width: 240px;
+    height: 240px;
+}
