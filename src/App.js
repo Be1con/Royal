@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Pages from './Pages/Pages';
 import * as firebase from 'firebase/app';
-
+import province from './province.json';
+import Test from './Test'
 class App extends Component {
     
     constructor(){
@@ -11,97 +12,11 @@ class App extends Component {
 
        FirstName : 'fefe',
        obj : {},
-       s : 'c',
-       North :
-        ['เชียงราย','เชียงใหม่' 
-        ,'น่าน'
-        ,'พะเยา' 
-        ,'แพร่' 
-        ,'แม่ฮ่องสอน' 
-        ,'ลำปาง' 
-        ,'ลำพูน' 
-        ,'อุตรดิตถ์'],
-        NorthEast : 
-        [   'กาฬสินธุ์' 
-            ,'ขอนแก่น' 
-            ,'ชัยภูมิ' 
-            ,'นครพนม' 
-            ,'นครราชสีมา' 
-            ,'บึงกาฬ' 
-            ,'บุรีรัมย์' 
-            ,'มหาสารคาม' 
-            ,'มุกดาหาร' 
-            ,'ยโสธร' 
-            ,'ร้อยเอ็ด' 
-            ,'เลย' 
-            ,'สกลนคร' 
-            ,'สุรินทร์' 
-            ,'ศรีสะเกษ' 
-            ,'หนองคาย' 
-            ,'หนองบัวลำภู' 
-            ,'อุดรธานี' 
-            ,'อุบลราชธานี' 
-            ,'อำนาจเจริญ' 
-
-        ],
-        Middle :
-        [    'กรุงเทพมหานคร'
-            ,'กำแพงเพชร' 
-            ,'ชัยนาท' 
-            ,'นครนายก' 
-            ,'นครปฐม' 
-            ,'นครสวรรค์' 
-            ,'นนทบุรี' 
-            ,'ปทุมธานี' 
-            ,'พระนครศรีอยุธยา' 
-            ,'พิจิตร' 
-            ,'พิษณุโลก' 
-            ,'เพชรบูรณ์' 
-            ,'ลพบุรี' 
-            ,'สมุทรปราการ' 
-            ,'สมุทรสงคราม' 
-            ,'สมุทรสาคร' 
-            ,'สิงห์บุรี' 
-            ,'สุโขทัย' 
-            ,'สุพรรณบุรี' 
-            ,'สระบุรี' 
-            ,'อ่างทอง' 
-            ,'อุทัยธานี'
-            ,'จันทบุรี' 
-            ,'ฉะเชิงเทรา' 
-            ,'ชลบุรี' 
-            ,'ตราด' 
-            ,'ปราจีนบุรี' 
-            ,'ระยอง' 
-            ,'สระแก้ว'
-            ,'กาญจนบุรี' 
-            ,'ตาก' 
-            ,'ประจวบคีรีขันธ์' 
-            ,'เพชรบุรี' 
-            ,'ราชบุรี' 
-
-        ],
-        South :
-        [
-            'กระบี่' 
-            ,'ชุมพร' 
-            ,'ตรัง' 
-            ,'นครศรีธรรมราช' 
-            ,'นราธิวาส' 
-            ,'ปัตตานี' 
-            ,'พังงา' 
-            ,'พัทลุง' 
-            ,'ภูเก็ต' 
-            ,'ระนอง' 
-            ,'สตูล' 
-            ,'สงขลา' 
-            ,'สุราษฎร์ธานี' 
-            ,'ยะลา' 
-             
-        ]
-
+       s : 'c'
+ 
     }
     }
+    
 
     componentDidMount() {
 
@@ -110,6 +25,7 @@ class App extends Component {
          
             const nameRef = rootRef.child('FirstName')
             // console.log(nameRef)
+          
             rootRef.on('value', (snap) => {
                 console.log(snap.val())
                 // alert(snap.val())
@@ -118,25 +34,47 @@ class App extends Component {
 
                 obj : snap.val(),
                 s : 'z',
-                FirstName : 'zzzzzz',
-                North : North
+                FirstName : 'zzzzzz'
+              
     
             })
 
+            console.log('bbccc')
+            console.log(province.Northern)
+            // let N =  Object.entries(this.state.obj).filter(function(province) {
+                
+
+            //     province.map((item)=>{
+            //             console.log()
+            //             if(item.Province !== 'undefined')
+            //             return item.Province.find(p => p === province.Northern)
+            //         // console.log(item.Province)
+            //         // console.log(a)
+            //         // var i;
+            //         // for (i = 0; i < province.Northern.length; i++) {
+            //         //     console.log(province.Northern[i])
+            //         // }
+                
+            //   })
+           
+                
+            // });
 
 
 
-            console.log(this.state.North)    
-            console.log((this.state.obj))
-            console.log(this.state.s)
-            // const a = Object.entries(this.state.obj)
-            // console.log(a)
-            // console.log(obj)
-            // console.log(snap); 
-            // console.log(this.state.FirstName)    
-            console.log((this.state.obj[2].Rank))
-            console.log(this.state.s)
-            console.log(this.state.FirstName)
+
+            // console.log(this.state.North)    
+            // console.log(province.Northern)
+            // console.log((this.state.obj))
+            // console.log(this.state.s)
+            // // const a = Object.entries(this.state.obj)
+            // // console.log(a)
+            // // console.log(obj)
+            // // console.log(snap); 
+            // // console.log(this.state.FirstName)    
+            // console.log((this.state.obj[2].Rank))
+            // console.log(this.state.s)
+            // console.log(this.state.FirstName)
 
             let result = Object.entries(this.state.obj);
             result.map((item, index)=>{
@@ -146,17 +84,20 @@ class App extends Component {
             
 
 
-                  let N =  Object.entries(this.state.obj).filter(function(province) {
+                //   let N =  Object.entries(this.state.obj).filter(function(province) {
 
 
-                    province.map((item)=>{
+                //     province.map((item)=>{
+                //             console.log(province.Northern)
+                //         // var i;
+                //         // for (i = 0; i < province.Northern.length; i++) {
+                //         //     console.log(province.Northern[i])
+                //         // }
                         
-                       console.log(this.state.North)
-                        
-                  })
+                //   })
                
                     
-                });
+                // });
                 
 
           
@@ -166,14 +107,14 @@ class App extends Component {
         console.log(this.state.s)
         console.log(this.state.FirstName)
     }
-
+  
 
     render(){
         return (
             <BrowserRouter>
                 <div>
                     <Pages />
-                    
+                    <Test obj={this.state.obj}/>
                     {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)}
                       {Object.keys(this.state.obj).map( (item,i) => <div key={i}>{item}</div>)
 }           
@@ -196,9 +137,9 @@ class App extends Component {
 {
                                     Object.entries(this.state.obj).map((item)=>
 
-
-                                      <img src ='{item[1].Image} 'alt="Girl in a jacket"/>
-                                        
+                                    
+                                    //   <img src ='https://lh6.googleusercontent.com/hPEFO2DRZliNxfPkDpV-EdfMnM3JB9um5tPlZB_QWAqyT2J0exRM1gdj1gTeqFWjMpQoM5KVpUkEiXDTh-gH=w2880-h1578-rw' alt="Girl in a jacket"/>
+                                    <img src ={item[1].Image} alt="Girl in a jacket"/>    
                                   )
                                     
 
