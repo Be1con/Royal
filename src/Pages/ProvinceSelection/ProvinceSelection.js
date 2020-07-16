@@ -5,15 +5,7 @@ import './ProvinceSelection.css';
 import { Grid } from '@material-ui/core';
 import Provinces from '../../Data/Province.json';
 
-class ProvinceSelection extends Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            Region: 'northern'
-        }
-    }
-    
+class ProvinceSelection extends Component {    
     render(){
         const colorList = [
             "#3E1CF2",
@@ -36,23 +28,23 @@ class ProvinceSelection extends Component {
             "#FFFF01",
             "#3BB467",
             "#342FD8",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
         ];
-        let filteredProvinces = Provinces.filter(eachRegion => eachRegion.name.includes(this.state.Region));
+        let filteredProvinces = Provinces.filter(eachRegion => eachRegion.name.includes(this.props.match.params.region));
 
         return(
             <div>
@@ -62,15 +54,15 @@ class ProvinceSelection extends Component {
                             return(
                                 <Grid container spacing={1}>
                                 {
-                                    eachProvince.list.map((eachItem, index) => {
-                                        return(
-                                            <Grid item sm={4} md={3} lg={2}>
-                                                <ProvinceButton ProvinceVector={eachItem.vector}
-                                                                ProvinceName={eachItem.thai}
-                                                                ProvinceColor={colorList[index]} />
-                                            </Grid>
-                                        )
-                                    })
+                                    eachProvince.list.map((eachItem, index) => (
+                                        <Grid item sm={4} md={3} lg={2}>
+                                            <ProvinceButton ProvinceVector={eachItem.vector}
+                                                            ProvinceName={eachItem.thai}
+                                                            ProvinceColor={colorList[index]}
+                                                            Routing={eachItem.english}
+                                                            CurrentPage={this.props.match.params.region} />
+                                        </Grid>
+                                    ))
                                 }
                                 </Grid>
                             )

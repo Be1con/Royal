@@ -1,0 +1,7 @@
+.villageList__paper {
+    padding: 15px;
+}
+
+.villageList__span {
+    flex-grow: 1;
+}

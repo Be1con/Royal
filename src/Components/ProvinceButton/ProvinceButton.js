@@ -7,7 +7,7 @@ const provinceButton = props => {
     return(
         <div>
             <ButtonBase>
-                <Link underline="none" component={RouterLink} to="#">
+                <Link underline="none" component={RouterLink} to={`/${props.CurrentPage}/${props.Routing}`}>
                     <div>
                         <div className="provinceButton__circular" style={{backgroundColor: props.ProvinceColor}}>
                             <div className="provinceButton__image">

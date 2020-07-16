@@ -1,15 +1,21 @@
+// For Required Modules
 import React, { Component } from 'react';
-import './Pages.css';
 import { Container } from '@material-ui/core'
 import { Switch, Route } from 'react-router-dom';
+
+// For Internal Components
 import Menubar from '../Components/Menubar/Menubar';
 import People from '../Components/People/People';
+import VillageList from '../Components/VillageList/VillageList';
 
 // For Pages
 import Home from './Home/Home';
 import ProvinceSelection from './ProvinceSelection/ProvinceSelection';
 import VillageSelection from './VillageSelection/VillageSelection';
 import ContactInfo from './ContactInfo/ContactInfo';
+
+// For CSS
+import './Pages.css';
 
 class Pages extends Component {
     render() {
@@ -25,6 +31,7 @@ class Pages extends Component {
                         <Route path="/:region/:province/:amphoe/:tambon/:village" exact component={ContactInfo} />
                     </Switch>
                     <People PeoplePicture="https://materializecss.com/images/sample-1.jpg" PeopleName="ทดสอบ ชื่อจริง" PeoplePosition="ทดสอบ" />
+                    <VillageList VillageName="Test" VillageTambon="Tambon" VillageAmphoe="Amphoe" />
                 </section>
             </Container>
         );
