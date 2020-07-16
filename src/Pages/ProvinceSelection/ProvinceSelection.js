@@ -66,7 +66,7 @@ class ProvinceSelection extends Component {
                                     eachProvince.list.map((eachItem, index) => {
                                         return(
                                             <Grid item sm={4} md={3} lg={2}>
-                                                <ProvinceButton ProvinceVector={Krabi}
+                                                <ProvinceButton ProvinceVector={eachItem.vector}
                                                                 ProvinceName={eachItem.thai}
                                                                 ProvinceColor={colorList[index]} />
                                             </Grid>
