@@ -11,7 +11,7 @@ const villageList = props => {
                     <Grid item>
                         <div>
                             <Typography variant="h3">{props.VillageName}</Typography>
-                            <Typography variant="body1">ตำบล{props.VillageTambon} อำเภอ{props.VillageAmphoe}</Typography>
+                            <Typography variant="body1">{props.VillageTambon} {props.VillageAmphoe}</Typography>
                         </div>
                     </Grid>
                     <Grid item>
