@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Pages from './Pages/Pages';
 import * as firebase from 'firebase/app';
-import Province from './Data/Province.json';
-import img from './Assets/Provinces/Central/Angthong.svg'
+
 class App extends Component {
     constructor(){
         super()
