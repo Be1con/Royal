@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Dialog, DialogTitle, DialogActions, Grid, Avatar, DialogContent, ButtomNavigation } from '@material-ui/core';
-import { CloseIcon } from '@material-ui/icons';
 import './Modal.css';
 
 class Modal extends Component {
