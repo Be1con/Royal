@@ -11,9 +11,7 @@ class VillageSelection extends Component {
     constructor() {
         super()
         this.state = {
-            obj: {},
-            amphoe: 'อำเภอ',
-            tambon: 'ตำบล'
+            obj: {}
         }
     }
 
@@ -30,6 +28,8 @@ class VillageSelection extends Component {
     }
 
     render() {
+        let amphoeOrKet = 'อำเภอ';
+        let tambonOrKwang = 'ตำบล';
         let storeProvince = "";
 
         const selectedRegion = Provinces.filter(region => region.name.match(this.props.match.params.region));
@@ -55,10 +55,8 @@ class VillageSelection extends Component {
                         // console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
                         if (item[1].Province === filteredProvince[0].province) {
                             if (filteredProvince[0].province.match("กรุงเทพมหานคร")){
-                                this.setState({
-                                    amphoe: "เขต",
-                                    tambon: "ตำบล"
-                                });
+                                amphoeOrKet = "เขต";
+                                tambonOrKwang = "แขวง";
                             }
 
                             filteredProvince[0].amphoe.map((amphoe) => {
@@ -70,7 +68,7 @@ class VillageSelection extends Component {
                                                 if (item[1].District === amphoe.name) {
                                                     return (
                                                         <div>
-                                                            <Typography variant="h5">{this.state.amphoe + item[1].District}</Typography>
+                                                            <Typography variant="h5">{amphoeOrKet + item[1].District}</Typography>
                                                             {
                                                                 amphoe.tambon.map(tambon => {
                                                                     if (tambon === item[1].SubDistrict)
@@ -83,7 +81,7 @@ class VillageSelection extends Component {
                                                                         return (
                                                                             <Grid container spacing={1}>
                                                                                 <div className="villageSelection__padding">
-                                                                                    <VillageList VillageName={item[1].Building} VillageTambon={this.state.tambon + item[1].District} VillageAmphoe={this.state.amphoe + item[1].SubDistrict} />
+                                                                                    <VillageList VillageName={item[1].Building} VillageTambon={tambonOrKwang + item[1].District} VillageAmphoe={amphoeOrKet + item[1].SubDistrict} />
                                                                                 </div>
                                                                             </Grid>
                                                                         )
@@ -91,10 +89,8 @@ class VillageSelection extends Component {
                                                                 })
                                                             }
                                                         </div>
-
                                                     )
                                                 }
-
                                             })
                                         }
                                     </div>
