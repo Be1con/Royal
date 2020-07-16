@@ -19,6 +19,9 @@ class App extends Component {
             this.setState({
                 obj : snap.val() 
             })
+
+            console.log(this.state.obj)
+
         });
     }
   
@@ -27,6 +30,7 @@ class App extends Component {
             <BrowserRouter>
                 <Pages />
             </BrowserRouter>
+
         );
     }
 }

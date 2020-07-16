@@ -30,8 +30,6 @@ class Pages extends Component {
                         <Route path="/:region/:province" exact component={VillageSelection} />
                         <Route path="/:region/:province/:amphoe/:tambon/:village" exact component={ContactInfo} />
                     </Switch>
-                    <People PeoplePicture="https://materializecss.com/images/sample-1.jpg" PeopleName="ทดสอบ ชื่อจริง" PeoplePosition="ทดสอบ" />
-                    <VillageList VillageName="Test" VillageTambon="Tambon" VillageAmphoe="Amphoe" />
                 </section>
             </Container>
         );
