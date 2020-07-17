@@ -36,7 +36,11 @@ class VillageSelection extends Component {
                                         return(
                                             <Grid container spacing={1}>
                                                 <div className="villageSelection__padding">
-                                                    <VillageList VillageName="Test" VillageTambon={tambon} VillageAmphoe={amphoe.name} />
+                                                    <VillageList    VillageName="Test"
+                                                                    VillageTambon={tambon}
+                                                                    VillageAmphoe={amphoe.name}
+                                                                    UrlRegion={this.props.match.params.region}
+                                                                    UrlProvince={this.props.match.params.province} />
                                                 </div>
                                             </Grid>
                                         )
