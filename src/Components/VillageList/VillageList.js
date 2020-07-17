@@ -12,8 +12,8 @@ const villageList = props => {
                     <Grid container spacing={2}>
                         <Grid item>
                             <div>
-                                <Typography variant="h3">{props.VillageName}</Typography>
-                                <Typography variant="body1">ตำบล{props.VillageTambon} อำเภอ{props.VillageAmphoe}</Typography>
+                                <Typography variant="h4">{props.VillageName}</Typography>
+                                <Typography variant="body1">{props.VillageTambonPrefix + props.VillageTambon} {props.VillageAmphoePrefix + props.VillageAmphoe}</Typography>
                             </div>
                         </Grid>
                         <Grid item>
