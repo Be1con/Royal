@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Grid } from '@material-ui/core';
-import { People, Info } from '@material-ui/icons'
 import Title from '../../Components/Title/Title';
 import MainButton from '../../Components/MainButton/MainButton';
 
@@ -28,12 +27,6 @@ const home = props => {
                 </Grid>
                 <Grid item xs={6} md={4} lg={3}>
                     <MainButton Vector={Southern} Name="ภาคใต้" Color="#296FBD" Routing="southern" />
-                </Grid>
-                <Grid item xs={6} md={4} lg={3}>
-                    <MainButton Vector={People} Name="คณะกรรมการ" Color="#1790DE" Routing="board" />
-                </Grid>
-                <Grid item xs={6} md={4} lg={3}>
-                    <MainButton Vector={Info} Name="เกี่ยวกับโครงการ" Color="#41C18B" Routing="northern" />
                 </Grid>
             </Grid>
         </div>
