@@ -6,30 +6,31 @@ import Provinces from '../../Data/Province.json';
 import EachProvince from '../../Data/Config.json';
 import VillageList from '../../Components/VillageList/VillageList';
 import * as firebase from 'firebase/app';
-
 class VillageSelection extends Component {
+
     constructor() {
         super()
-        this.state = {
-            objectData: {}
+        ate = {
+            obj: {}
         }
     }
 
     componentDidMount() {
-        const rootRef = firebase.database().ref('Mastersheet');
+        const rootRef = firebase.database().ref('Mastersheet')
 
-        rootRef.on('value', (snapshot) => {
-            console.log(snapshot.val());
+        rootRef.on('value', (snap) => {
+            console.log(snap.val())
             this.setState({
-                objectData: snapshot.val()
-            });
-            console.log(this.state.objectData);
+                obj: snap.val()
+            })
+
+            // console.log(this.state.obj)
+
         });
     }
 
+
     render() {
-        let amphoeOrKet = 'อำเภอ';
-        let tambonOrKwang = 'ตำบล';
         let storeProvince = "";
 
         const selectedRegion = Provinces.filter(region => region.name.match(this.props.match.params.region));
@@ -44,71 +45,50 @@ class VillageSelection extends Component {
         });
 
         const filteredProvince = EachProvince.filter(eachProvince => eachProvince.province.includes(storeProvince));
-        console.log(storeProvince);
-        console.log(filteredProvince);
-
+        // console.log(storeProvince)
+        // console.log(filteredProvince)
+            
         return (
             <div>
                 <Title TitleHeading={filteredProvince[0].province} />
+           
                 {
-                    Object.entries(this.state.objectData).map((item) => {
-                        // console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
+                    Object.entries(this.state.obj).map((item, index) => {
+                        {console.log(item[1].Building)}
                         if (item[1].Province === filteredProvince[0].province) {
-                            if (filteredProvince[0].province.match("กรุงเทพมหานคร")){
-                                amphoeOrKet = "เขต";
-                                tambonOrKwang = "แขวง";
-                            }
+                            
+                            return (
+                                <div>
+                                    <Typography variant="h5">อำเภอ{item[1].District}</Typography>
 
-                            filteredProvince[0].amphoe.map((amphoe) => {
-                                return (
-                                    <div>
-                                        {
-                                            Object.entries(this.state.objectData).map((item) => {
-                                                // console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
-                                                if (item[1].District === amphoe.name) {
-                                                    console.log(item[1].District);
-                                                    return (
-                                                        <div>
-                                                            <Typography variant="h5">{amphoeOrKet + item[1].District}</Typography>
-                                                            {
-                                                                amphoe.tambon.map(tambon => {
-                                                                    if (tambon === item[1].SubDistrict)
-                                                                    {
-                                                                        console.log(tambon)
-                                                                        console.log(item[1].SubDistrict)
-                                                                        console.log(item[1].Building)
-                                                                        console.log(item[1].District)
-                                                                      
-                                                                        return (
-                                                                            <Grid container spacing={1}>
-                                                                                <div className="villageSelection__padding">
-                                                                                    <VillageList VillageName={item[1].Building} VillageTambon={tambonOrKwang + item[1].District} VillageAmphoe={amphoeOrKet + item[1].SubDistrict} />
-                                                                                </div>
-                                                                            </Grid>
-                                                                        )
-                                                                    }
-                                                                    return(null);
-                                                                })
-                                                            }
+                                              {console.log(item[1].Building)}
+                                                    <Grid container spacing={1}>
+                                                        <div className="villageSelection__padding">
+                                                            <VillageList VillageName={item[1].Building} VillageTambon={item[1].District} VillageAmphoe={item[1].SubDistrict} />
                                                         </div>
-                                                    )
-                                                }
-                                                return(null);
-                                            })
-                                        }
-                                    </div>
-                                )
-                            })
+                                                    </Grid>
+                                                
+
+                               
+
+                                </div>
+                            );
+
+
+
+
+
                         }
-                        return(null);
-                    })
+                    }
+                    )
                 }
             </div>
+
         );
+
     }
 }
-
-export default VillageSelection;
+    export default VillageSelection;
 
 
 
