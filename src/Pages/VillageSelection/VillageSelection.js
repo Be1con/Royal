@@ -11,19 +11,19 @@ class VillageSelection extends Component {
     constructor() {
         super()
         this.state = {
-            obj: {}
+            objectData: {}
         }
     }
 
     componentDidMount() {
         const rootRef = firebase.database().ref('Mastersheet');
 
-        rootRef.on('value', (snap) => {
-            console.log(snap.val());
+        rootRef.on('value', (snapshot) => {
+            console.log(snapshot.val());
             this.setState({
-                obj: snap.val()
+                objectData: snapshot.val()
             });
-            console.log(this.state.obj);
+            console.log(this.state.objectData);
         });
     }
 
@@ -51,7 +51,7 @@ class VillageSelection extends Component {
             <div>
                 <Title TitleHeading={filteredProvince[0].province} />
                 {
-                    Object.entries(this.state.obj).map((item) => {
+                    Object.entries(this.state.objectData).map((item) => {
                         // console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
                         if (item[1].Province === filteredProvince[0].province) {
                             if (filteredProvince[0].province.match("กรุงเทพมหานคร")){
@@ -63,7 +63,7 @@ class VillageSelection extends Component {
                                 return (
                                     <div>
                                         {
-                                            Object.entries(this.state.obj).map((item) => {
+                                            Object.entries(this.state.objectData).map((item) => {
                                                 // console.log('key is:- ', item[0], ' and value is:- ', item[1]); 
                                                 if (item[1].District === amphoe.name) {
                                                     console.log(item[1].District);
