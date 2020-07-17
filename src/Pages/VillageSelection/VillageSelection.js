@@ -6,11 +6,11 @@ import Provinces from '../../Data/Province.json';
 import EachProvince from '../../Data/Config.json';
 import VillageList from '../../Components/VillageList/VillageList';
 import * as firebase from 'firebase/app';
-class VillageSelection extends Component {
 
+class VillageSelection extends Component {
     constructor() {
-        super()
-        ate = {
+        super();
+        this.state = {
             obj: {}
         }
     }
@@ -22,16 +22,14 @@ class VillageSelection extends Component {
             console.log(snap.val())
             this.setState({
                 obj: snap.val()
-            })
-
-            // console.log(this.state.obj)
-
+            });
         });
     }
 
-
     render() {
         let storeProvince = "";
+        let amphoeOrKhet = "อำเภอ";
+        let tambonOrKhwaeng = "ตำบล";
 
         const selectedRegion = Provinces.filter(region => region.name.match(this.props.match.params.region));
         selectedRegion.map(regionProvince => {
@@ -45,50 +43,45 @@ class VillageSelection extends Component {
         });
 
         const filteredProvince = EachProvince.filter(eachProvince => eachProvince.province.includes(storeProvince));
-        // console.log(storeProvince)
-        // console.log(filteredProvince)
-            
+
         return (
             <div>
                 <Title TitleHeading={filteredProvince[0].province} />
-           
                 {
-                    Object.entries(this.state.obj).map((item, index) => {
-                        {console.log(item[1].Building)}
+                    Object.entries(this.state.obj).map((item) => {
+                        { console.log(item[1].Building) }
                         if (item[1].Province === filteredProvince[0].province) {
-                            
+                            if (filteredProvince[0].province === "กรุงเทพมหานคร") {
+                                amphoeOrKhet = "เขต";
+                                tambonOrKhwaeng = "แขวง";
+                            }
+
                             return (
                                 <div>
                                     <Typography variant="h5">อำเภอ{item[1].District}</Typography>
-
-                                              {console.log(item[1].Building)}
-                                                    <Grid container spacing={1}>
-                                                        <div className="villageSelection__padding">
-                                                            <VillageList VillageName={item[1].Building} VillageTambon={item[1].District} VillageAmphoe={item[1].SubDistrict} />
-                                                        </div>
-                                                    </Grid>
-                                                
-
-                               
-
+                                    {console.log(item[1].Building)}
+                                    <Grid container spacing={1}>
+                                        <Grid item sm={12} md={6} lg={4} className="villageSelection__padding">
+                                            <VillageList    VillageName={item[1].Building}
+                                                            VillageTambon={item[1].District}
+                                                            VillageAmphoe={item[1].SubDistrict}
+                                                            VillageTambonPrefix={tambonOrKhwaeng}
+                                                            VillageAmphoePrefix={amphoeOrKhet}
+                                                            UrlRegion={this.props.match.params.region}
+                                                            UrlProvince={this.props.match.params.province} />
+                                        </Grid>
+                                    </Grid>
                                 </div>
                             );
-
-
-
-
-
                         }
-                    }
-                    )
+                    })
                 }
             </div>
-
         );
 
     }
 }
-    export default VillageSelection;
+export default VillageSelection;
 
 
 

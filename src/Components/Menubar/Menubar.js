@@ -8,7 +8,7 @@ import './Menubar.css';
 const menubar = props => {
     return(
         <AppBar className="menubar__flexgrow">
-            <Toolbar>
+            <Toolbar className="menubar__main">
                 <IconButton className="menubar__margin" edge="start" color="inherit" aria-label="menu">
                     <Menu />
                 </IconButton>
