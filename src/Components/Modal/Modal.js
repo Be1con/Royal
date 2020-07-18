@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Dialog, DialogTitle, DialogActions, Grid, Avatar, DialogContent, BottomNavigation, BottomNavigationAction, Slide, Card } from '@material-ui/core';
 import { makeStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Home, Phone, Message, Business } from '@material-ui/icons'
@@ -6,18 +6,9 @@ import green from '@material-ui/core/colors/green';
 import './Modal.css';
 
 class Modal extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            spacing: 5,
-            setSpacing: 5,
-            value: 'recents',
-            setValue: 'recents'
-        }
-    }
-
     render () {
+        const [spacing, setSpacing] = useState(5);
+
         const theme = createMuiTheme({
             palette: {
                 primary: green,
@@ -49,7 +40,7 @@ class Modal extends Component {
                 <DialogTitle id="alert-dialog-slide-title">
                     <Grid container className="modal__main">
                         <Grid item xs={12}>
-                            <Grid container justify="center" spacing={this.state.spacing}>
+                            <Grid container justify="center" spacing={spacing}>
                                 {[0, 1].map((value) => (
                                     <Grid key={value} item>
                                         <Avatar alt="Remy Sharp" src="https://drive.google.com/thumbnail?id=1W_uouwkbc7C5aEyO3iRjXuIeP-GNsblb"
