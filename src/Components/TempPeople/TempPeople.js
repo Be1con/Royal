@@ -12,7 +12,7 @@ const tempPeople = props => {
                 <Card className="people__card">
                     <CardActionArea>
                         <CardMedia className="people__media" image={props.PeoplePicture} title={props.PeopleName} />
-                        <CardContent>
+                        <CardContent className="people__cardContent">
                             <Typography gutterBottom variant="h5" component="h2">
                                 {props.PeopleName}
                             </Typography>
