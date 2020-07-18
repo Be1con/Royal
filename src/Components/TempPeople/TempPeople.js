@@ -14,7 +14,7 @@ const tempPeople = props => {
                                 {props.PeopleName}
                             </Typography>
                             <Typography variant="body1" color="textSecondary" component="p">
-                                {props.PeoplePosition}
+                                {props.PeoplePosition} | {props.PeopleDuty}
                             </Typography>
                             <Typography variant="body2">
                                 เบอร์โทรศัพท์: {props.PeoplePhoneNumber} LINE: {props.PeopleLINE}
