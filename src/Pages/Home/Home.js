@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Grid } from '@material-ui/core';
-import { People, Info } from '@material-ui/icons'
 import Title from '../../Components/Title/Title';
 import MainButton from '../../Components/MainButton/MainButton';
 

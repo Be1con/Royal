@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Dialog, DialogTitle, DialogActions, Grid, Avatar, DialogContent, ButtomNavigation } from '@material-ui/core';
+import { Dialog, DialogTitle, DialogActions, Grid, Avatar, DialogContent, BottomNavigation, BottomNavigationAction, Slide, SvgIcon, Card } from '@material-ui/core';
+import { makeStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import green from '@material-ui/core/colors/green';
 import './Modal.css';
 
 class Modal extends Component {
-    constructor() {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -14,41 +16,30 @@ class Modal extends Component {
         }
     }
 
-    render() {
-        const classes = useStyles();
+    render () {
+        function HomeIcon(props) {
+            return (
+                <SvgIcon {...props}>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </SvgIcon>
+            );
+        }
+        
+        const theme = createMuiTheme({
+            palette: {
+                primary: green,
+                secondary: {
+                    main: '#2e7d32',
+                },
+                spacing: 8,
+            },
+        });
 
         const useStyles = makeStyles({
-            root: {
-                flexGrow: 1,
-            },
-
             large: {
                 width: theme.spacing(12),
                 height: theme.spacing(12),
             },
-
-            buttonPadding: {
-                padding: '300px',
-                margin: '300px',
-            },
-
-            bg: {
-                backgroundColor: '#259740',
-            },
-
-            paper: {
-                height: 140,
-                width: 100,
-            },
-
-            container: {
-
-                width: '95vw',
-                padding: '9px',
-                margin: '7px',
-                height: '7vw'
-            },
-
             control: {
                 padding: theme.spacing(4),
             }
@@ -58,10 +49,12 @@ class Modal extends Component {
             return <Slide direction="up" ref={ref} {...props} />;
         });
 
+        const classes = useStyles();
+
         return (
-            <Dialog fullScreen open={open} TransitionComponent={Transition} keepMounted onClose={this.props.Close} aria-labelledby="alert-dialog-slide-title" aria-describedby="alert-dialog-slide-description">
+            <Dialog fullScreen open={this.props.Open} TransitionComponent={Transition} keepMounted onClose={this.props.Close} aria-labelledby="alert-dialog-slide-title" aria-describedby="alert-dialog-slide-description">
                 <DialogTitle id="alert-dialog-slide-title">
-                    <Grid container className={classes.root}>
+                    <Grid container className="modal__main">
                         <Grid item xs={12}>
                             <Grid container justify="center" spacing={this.state.spacing}>
                                 {[0, 1].map((value) => (
@@ -75,26 +68,26 @@ class Modal extends Component {
                     </Grid>
                 </DialogTitle>
                 <DialogContent>
-                    <Card className={classes.root} className={classes.buttonPadding} className={classes.container}>
+                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
                         <HomeIcon color="primary" />
                         นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
                     </Card>
-                    <Card className={classes.root} className={classes.buttonPadding} className={classes.container}>
+                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
                         <HomeIcon color="primary" />
                         นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
                     </Card>
-                    <Card className={classes.root} className={classes.buttonPadding} className={classes.container}>
+                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
                         <HomeIcon color="primary" />
                         นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
                     </Card>
-                    <Card className={classes.root} className={classes.buttonPadding} className={classes.container}>
+                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
                         <HomeIcon color="primary" />
                         นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
                     </Card>
                 </DialogContent>
                 <MuiThemeProvider>
-                    <DialogActions className={classes.bg}>
-                        <BottomNavigation value={value} onChange={handleChange} className={classes.root} className={classes.bg}>
+                    <DialogActions className="modal__background">
+                        <BottomNavigation className="modal__main" className="modal__background">
                             <BottomNavigationAction onClick={this.props.Close} label="Close" value="recents" />
                         </BottomNavigation>
                     </DialogActions>
