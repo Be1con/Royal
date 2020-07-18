@@ -1,0 +1,19 @@
+.modal__main {
+    flex-grow: 1;
+}
+
+.modal__buttonPadding {
+    padding: 300px;
+    margin: 300px;
+}
+
+.modal__background {
+    background-color: #259740;
+}
+
+.modal__container {
+    width: 95vw;
+    padding: 9px;
+    margin: 7px;
+    height: 7vw
+}

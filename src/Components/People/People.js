@@ -1,12 +1,11 @@
 import React from 'react';
 import './People.css';
-import { Card, CardActionArea, CardContent, CardMedia, Typography, Link } from '@material-ui/core';
-import { Link as RouterLink } from 'react-router-dom'
+import { Card, CardActionArea, CardContent, CardMedia, Typography, ButtonBase } from '@material-ui/core';
 
 const people = props => {
     return(
         <div>
-            <Link underline="none" component={RouterLink} to="#">
+            <ButtonBase onClick={props.OpenModal}>
                 <Card className="people__card">
                     <CardActionArea>
                         <CardMedia className="people__media" image={props.PeoplePicture} title={props.PeopleName} />
@@ -20,7 +19,7 @@ const people = props => {
                         </CardContent>
                     </CardActionArea>
                 </Card>
-            </Link>
+            </ButtonBase>
         </div>
     );
 }
