@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Dialog, DialogTitle, DialogActions, Grid, Avatar, DialogContent, BottomNavigation, BottomNavigationAction, Slide, SvgIcon, Card } from '@material-ui/core';
+import { Dialog, DialogTitle, DialogActions, Grid, Avatar, DialogContent, BottomNavigation, BottomNavigationAction, Slide, Card } from '@material-ui/core';
 import { makeStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { Home, Phone, Message, Business } from '@material-ui/icons'
 import green from '@material-ui/core/colors/green';
 import './Modal.css';
 
@@ -17,14 +18,6 @@ class Modal extends Component {
     }
 
     render () {
-        function HomeIcon(props) {
-            return (
-                <SvgIcon {...props}>
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                </SvgIcon>
-            );
-        }
-        
         const theme = createMuiTheme({
             palette: {
                 primary: green,
@@ -68,26 +61,26 @@ class Modal extends Component {
                     </Grid>
                 </DialogTitle>
                 <DialogContent>
-                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
-                        <HomeIcon color="primary" />
-                        นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
+                    <Card className="modal__main modal__buttonPadding modal__container">
+                        <Business color="primary" />
+                        นายกองค์การบริหารส่วนตำบลไฟป่า
                     </Card>
-                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
-                        <HomeIcon color="primary" />
-                        นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
+                    <Card className="modal__main modal__buttonPadding modal__container">
+                        <Home color="primary" />
+                        ที่อยู่
                     </Card>
-                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
-                        <HomeIcon color="primary" />
-                        นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
+                    <Card className="modal__main modal__buttonPadding modal__container">
+                        <Phone color="primary" />
+                        0819995555
                     </Card>
-                    <Card className="modal__main" className="modal__buttonPadding" className="modal__container">
-                        <HomeIcon color="primary" />
-                        นายพิทักษ์ ทองคำส่วน นายกองค์การบริหารส่วนตำบลไฟป่า
+                    <Card className="modal__main modal__buttonPadding modal__container">
+                        <Message color="primary" />
+                        PitakT
                     </Card>
                 </DialogContent>
                 <MuiThemeProvider>
                     <DialogActions className="modal__background">
-                        <BottomNavigation className="modal__main" className="modal__background">
+                        <BottomNavigation className="modal__main modal__background">
                             <BottomNavigationAction onClick={this.props.Close} label="Close" value="recents" />
                         </BottomNavigation>
                     </DialogActions>

@@ -49,7 +49,6 @@ class VillageSelection extends Component {
                 <Title TitleHeading={filteredProvince[0].province} />
                 {
                     Object.entries(this.state.obj).map((item) => {
-                        { console.log(item[1].Building) }
                         if (item[1].Province === filteredProvince[0].province) {
                             if (filteredProvince[0].province === "กรุงเทพมหานคร") {
                                 amphoeOrKhet = "เขต";
@@ -74,6 +73,7 @@ class VillageSelection extends Component {
                                 </div>
                             );
                         }
+                        return(null);
                     })
                 }
             </div>
