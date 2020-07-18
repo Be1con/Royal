@@ -3,6 +3,9 @@ import './TempPeople.css';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, ButtonBase } from '@material-ui/core';
 
 const tempPeople = props => {
+    const telNumber = "tel:" + props.PeoplePhoneNumber;
+    const LINE = "http://line.me/ti/p/~" + props.PeopleLINE;
+
     return(
         <div>
             <ButtonBase onClick={props.OpenModal}>
@@ -17,7 +20,7 @@ const tempPeople = props => {
                                 {props.PeoplePosition} | {props.PeopleDuty}
                             </Typography>
                             <Typography variant="body2">
-                                เบอร์โทรศัพท์: {props.PeoplePhoneNumber} LINE: {props.PeopleLINE}
+                                เบอร์โทรศัพท์: <a href={telNumber}>{props.PeoplePhoneNumber}</a> LINE: <a href={LINE}>{props.PeopleLINE}</a>
                             </Typography>
                         </CardContent>
                     </CardActionArea>
