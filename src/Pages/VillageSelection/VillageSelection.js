@@ -82,6 +82,3 @@ class VillageSelection extends Component {
     }
 }
 export default VillageSelection;
-
-
-
