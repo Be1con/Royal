@@ -62,8 +62,8 @@ class VillageSelection extends Component {
                                     <Grid container spacing={1}>
                                         <Grid item sm={12} md={6} lg={4} className="villageSelection__padding">
                                             <VillageList    VillageName={item[1].Building}
-                                                            VillageTambon={item[1].District}
-                                                            VillageAmphoe={item[1].SubDistrict}
+                                                            VillageTambon={item[1].SubDistrict}
+                                                            VillageAmphoe={item[1].District}
                                                             VillageTambonPrefix={tambonOrKhwaeng}
                                                             VillageAmphoePrefix={amphoeOrKhet}
                                                             UrlRegion={this.props.match.params.region}
