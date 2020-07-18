@@ -20,7 +20,13 @@ const tempPeople = props => {
                                 {props.PeoplePosition} | {props.PeopleDuty}
                             </Typography>
                             <Typography variant="body2">
-                                เบอร์โทรศัพท์: <a href={telNumber}>{props.PeoplePhoneNumber}</a> LINE: <a href={LINE}>{props.PeopleLINE}</a>
+                                ที่อยู่: {props.PeopleLocation}
+                            </Typography>
+                            <Typography variant="body2">
+                                เบอร์โทรศัพท์: <a href={telNumber}>{props.PeoplePhoneNumber}</a>
+                            </Typography>
+                            <Typography variant="body2">
+                                LINE: <a href={LINE}>{props.PeopleLINE}</a>
                             </Typography>
                         </CardContent>
                     </CardActionArea>

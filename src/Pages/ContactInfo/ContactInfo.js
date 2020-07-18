@@ -32,7 +32,7 @@ class ContactInfo extends Component {
                 </div>
                 <Grid container spacing={2}>
                     <Grid item sm={6} md={4} lg={3}>
-                        <TempPeople PeoplePicture="https://materializecss.com/images/sample-1.jpg" PeopleName="ทดสอบ ชื่อจริง" PeoplePosition="ตำแหน่ง" PeopleDuty="หน้าที่" PeoplePhoneNumber="000000000000" PeopleLINE="PepegaClapWR" OpenModal={openModal} />
+                        <TempPeople PeoplePicture="https://materializecss.com/images/sample-1.jpg" PeopleName="ทดสอบ ชื่อจริง" PeoplePosition="ตำแหน่ง" PeopleDuty="หน้าที่" PeopleLocation="ทดสอบที่อยู่" PeoplePhoneNumber="000000000000" PeopleLINE="PepegaClapWR" OpenModal={openModal} />
                     </Grid>
                 </Grid>
             </div>
