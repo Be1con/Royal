@@ -6,7 +6,7 @@ import Provinces from '../../Data/Province.json';
 import EachProvince from '../../Data/Config.json';
 import VillageList from '../../Components/VillageList/VillageList';
 import * as firebase from 'firebase/app';
-
+import TempPeople from '../../Components/TempPeople/TempPeople.js'
 class VillageSelection extends Component {
     constructor() {
         super();
@@ -68,6 +68,17 @@ class VillageSelection extends Component {
                                                             VillageAmphoePrefix={amphoeOrKhet}
                                                             UrlRegion={this.props.match.params.region}
                                                             UrlProvince={this.props.match.params.province} />
+                                                <TempPeople PeoplePicture={item[1].Image} 
+                                                            PeopleName={item[1].FirstName}
+                                                            PeoplePosition={item[1].Postion}
+                                                            PeoplePhoneNumber={item[1].MobileNumber}
+                                                            PeopleLINE={item[1].LineID}
+                                                            
+                                                  
+                                                     />
+                                              
+                                                    
+
                                         </Grid>
                                     </Grid>
                                 </div>
@@ -82,6 +93,7 @@ class VillageSelection extends Component {
     }
 }
 export default VillageSelection;
+
 
 
 
