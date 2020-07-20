@@ -28,6 +28,7 @@ class Pages extends Component {
                         <Route path="/:region/:province" exact component={VillageSelection} />
                         <Route path="/:region/:province/:amphoe/:tambon/:village" exact component={ContactInfo} />
                         
+                        
                     </Switch>
                 </section>
             </Container>
