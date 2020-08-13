@@ -61,30 +61,19 @@ class VillageSelection extends Component {
                                     {console.log(item[1].Building)}
                                     <Grid container spacing={1}>
                                         <Grid item sm={12} md={6} lg={4} className="villageSelection__padding">
-                                            <VillageList    VillageName={item[1].Building}
-                                                            VillageTambon={item[1].SubDistrict}
-                                                            VillageAmphoe={item[1].District}
-                                                            VillageTambonPrefix={tambonOrKhwaeng}
-                                                            VillageAmphoePrefix={amphoeOrKhet}
-                                                            UrlRegion={this.props.match.params.region}
-                                                            UrlProvince={this.props.match.params.province} />
-                                                <TempPeople PeoplePicture={item[1].Image} 
-                                                            PeopleName={item[1].FirstName}
-                                                            PeoplePosition={item[1].Postion}
-                                                            PeoplePhoneNumber={item[1].MobileNumber}
-                                                            PeopleLINE={item[1].LineID}
-                                                            
-                                                  
-                                                     />
-                                              
-                                                    
-
+                                            <VillageList VillageName={item[1].Building}
+                                                VillageTambon={item[1].SubDistrict}
+                                                VillageAmphoe={item[1].District}
+                                                VillageTambonPrefix={tambonOrKhwaeng}
+                                                VillageAmphoePrefix={amphoeOrKhet}
+                                                UrlRegion={this.props.match.params.region}
+                                                UrlProvince={this.props.match.params.province} />
                                         </Grid>
                                     </Grid>
                                 </div>
                             );
                         }
-                        return(null);
+                        return (null);
                     })
                 }
             </div>
